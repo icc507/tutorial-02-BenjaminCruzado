@@ -10,20 +10,22 @@
 #La salida debe ser
 #         [20, [8, [5, [], [], []], [], []], [], [30, [], [], [90, [], [90, [], [90, [], [], []], []], []]]]
 def arbolTrinario(numero):
-    return [numero, [],[], []]
+    return [numero, [], [], []]
 
-def insertaEnArbolTrinario(arbol,numero):
-    if arbol==[]:
-        arbol+=arbolTrinario(numero)
+
+def insertaEnArbolTrinario(arbol, numero):
+    if arbol == []:
+        arbol += arbolTrinario(numero)
     elif numero < arbol[0]:
         insertaEnArbolTrinario(arbol[1], numero)
-    elif numero == arbol[0]:
-        insertaEnArbolTrinario(arbol[2], numero)
+    elif numero > arbol[0]:
+        (insertaEnArbolTrinario(arbol[3], numero))
     else:
-        insertaEnArbolTrinario(arbol[3], numero)
+        insertaEnArbolTrinario(arbol[2], numero)
 
-lista = input().split()
-w = arbolTrinario(int(lista[0]))
-for i in lista[1:]:
-    insertaEnArbolTrinario(w, int(i))
-print(w)
+
+numeros = input().split()
+a = arbolTrinario(int(numeros[0]))
+for numero in numeros[1:]:
+    insertaEnArbolTrinario(a, int(numero))
+print(a)
