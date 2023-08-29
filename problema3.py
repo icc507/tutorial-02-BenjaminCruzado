@@ -25,5 +25,5 @@ def insertaEnArbolTrinario(arbol,numero):
 lista = input().split()
 w = arbolTrinario(int(lista[0]))
 for i in lista[1:]:
-    insertaEnArbolTrinario(w, i)
+    insertaEnArbolTrinario(w, int(i))
 print(w)
