@@ -22,7 +22,7 @@ def insertaEnArbolTrinario(arbol,numero):
     else:
         insertaEnArbolTrinario(arbol[3], numero)
 
-lista = input().split()
+lista = int(input().split())
 w = arbolTrinario(lista[0])
 for i in lista[1:]:
     insertaEnArbolTrinario(w, i)
